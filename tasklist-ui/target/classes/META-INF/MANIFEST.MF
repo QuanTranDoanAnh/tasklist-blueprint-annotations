@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1523059179008
+Build-Jdk: 1.8.0_131
+Built-By: QuanTDA1
+Bundle-Blueprint: OSGI-INF/blueprint/autowire.xml
+Bundle-Description: Tasklist Servlet UI
+Bundle-ManifestVersion: 2
+Bundle-Name: Tasklist Servlet UI
+Bundle-SymbolicName: vn.quantda.example.osgi.tasklist.ui
+Bundle-Version: 1.0.0.SNAPSHOT
+Created-By: Apache Maven Bundle Plugin
+Export-Package: vn.quantda.example.osgi.tasklist.ui;uses:="javax.inject,
+ javax.servlet,javax.servlet.http,org.apache.aries.blueprint.annotation.
+ service";version="1.0.0"
+Export-Service: javax.servlet.Servlet;osgi.http.whiteboard.servlet.patte
+ rn=/tasklist;osgi.service.blueprint.compname=tasklistServlet
+Import-Package: javax.inject;resolution:=optional,javax.servlet,javax.se
+ rvlet.http,org.apache.aries.blueprint.annotation.service;version="[1.0,
+ 2)";resolution:=optional,org.osgi.service.blueprint;version="[1.0.0,2.0
+ .0)",vn.quantda.example.osgi.tasklist;version="[1.0,2)"
+Import-Service: vn.quantda.example.osgi.tasklist.TaskService;multiple:=f
+ alse
+Require-Capability: osgi.service;filter:="(objectClass=org.osgi.service.
+ http.HttpService)";effective:=active,osgi.ee;filter:="(&(osgi.ee=JavaSE
+ )(version=1.8))"
+Tool: Bnd-3.3.0.201609221906

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?><blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+    <bean id="taskServiceImpl" class="vn.quantda.example.osgi.tasklist.persistence.ipml.TaskServiceImpl"/>
+    <service ref="taskServiceImpl" interface="vn.quantda.example.osgi.tasklist.TaskService">
+        <service-properties>
+            <entry key="service.exported.interfaces" value="*"/>
+        </service-properties>
+    </service>
+</blueprint>

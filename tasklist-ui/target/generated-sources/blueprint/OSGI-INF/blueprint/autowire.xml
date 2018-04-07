@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?><blueprint xmlns="http://www.osgi.org/xmlns/blueprint/v1.0.0">
+    <bean xmlns:ext="http://aries.apache.org/blueprint/xmlns/blueprint-ext/v1.0.0" id="tasklistServlet" class="vn.quantda.example.osgi.tasklist.ui.TasklistServlet" ext:field-injection="true">
+        <property name="taskService" ref="taskService"/>
+    </bean>
+    <reference id="taskService" interface="vn.quantda.example.osgi.tasklist.TaskService"/>
+    <service ref="tasklistServlet" interface="javax.servlet.Servlet">
+        <service-properties>
+            <entry key="osgi.http.whiteboard.servlet.pattern" value="/tasklist"/>
+        </service-properties>
+    </service>
+</blueprint>
